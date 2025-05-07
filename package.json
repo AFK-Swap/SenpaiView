@@ -9,6 +9,7 @@
     "server": "nodemon --env-file=.env server/index.js",
     "client": "vite",
     "build": "vite build",
+    "build:vercel": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

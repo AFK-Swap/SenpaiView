@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "name": "senpaiview-backend",
+      "type": "web",
+      "buildCommand": "npm install",
+      "startCommand": "npm run server",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "$PORT",
+        "MONGODB_URI": "$MONGODB_URI"
+      },
+      "sourceDir": "server",
+      "instanceType": "free",
+      "autoDeploy": true
+    }
+  ]
+}
