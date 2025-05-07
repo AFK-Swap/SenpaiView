@@ -3,7 +3,7 @@
     {
       "name": "senpaiview-backend",
       "type": "web",
-      "buildCommand": "npm install",
+      "buildCommand": "npm install && npm install --save puppeteer-core",
       "startCommand": "npm run server",
       "env": {
         "NODE_ENV": "production",
