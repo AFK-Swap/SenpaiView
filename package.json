@@ -2,7 +2,7 @@
   "name": "senpaiview",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:8000",
+  "proxy": "https://senpaiview-backend.onrender.com",
   "type": "module",
   "scripts": {
     "dev": "concurrently -k -n BACKEND,FRONTEND -c yellow,cyan \"npm run server\" \"npm run client\"",
