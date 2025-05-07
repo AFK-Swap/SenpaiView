@@ -5,7 +5,7 @@ import axios from 'axios';
 import { User, Mail, Shield, Clock, Star, List, Plus } from 'lucide-react';
 import { toast } from 'react-toastify';
 import Watchlist from './components/Watchlist';
-import WatchHistory from '../components/WatchHistory';
+import WatchHistory from './components/WatchHistory';
 
 const ProfilePage = () => {
   const { user } = useSelector((state) => state.auth);
