@@ -2,11 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
-      "use": "@vercel/static-build"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "https://senpaiview-backend.onrender.com/$1",
+      "continue": true
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
