@@ -1,12 +1,12 @@
-const fs = require('fs');
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 
 // Path to the file with incorrect imports
 const profilePath = 'src/pages/ProfilePage.jsx';
 
 // Check if the file exists
-if (fs.existsSync(profilePath)) {
+if (existsSync(profilePath)) {
   // Read the file content
-  const content = fs.readFileSync(profilePath, 'utf8');
+  const content = readFileSync(profilePath, 'utf8');
   
   // Fix the import paths
   const fixedContent = content
@@ -15,7 +15,7 @@ if (fs.existsSync(profilePath)) {
     .replace(/<Watchlist /g, '<WatchList ');
   
   // Write the fixed content back to the file
-  fs.writeFileSync(profilePath, fixedContent);
+  writeFileSync(profilePath, fixedContent);
   
   console.log('Fixed import paths in ProfilePage.jsx');
 }
