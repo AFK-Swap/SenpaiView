@@ -12,7 +12,7 @@
     "build:vercel": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "node -e \"const fs=require('fs');const dir='src/components';!fs.existsSync(dir)||fs.writeFileSync(dir+'/Watchlist.jsx', 'import WatchList from \\\\'./WatchList\\\\';\\nexport default WatchList;');\" && npm run build"
+    "vercel-build": "node scripts/fix-imports.js && npm run build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",

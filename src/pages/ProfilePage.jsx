@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { User, Mail, Shield, Clock, Star, List, Plus } from 'lucide-react';
 import { toast } from 'react-toastify';
-import WatchList from './components/WatchList';
-import WatchHistory from './components/WatchHistory';
+// Import directly from components folder
+import WatchList from '../components/WatchList';
+import WatchHistory from '../components/WatchHistory';
 
 const ProfilePage = () => {
   const { user } = useSelector((state) => state.auth);
