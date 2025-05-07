@@ -39,10 +39,11 @@ function App() {
   )
 
   return (
-    <>
+    <div className="min-h-screen bg-blue-500 flex items-center justify-center text-white text-4xl font-bold">
       <RouterProvider router={router} />
       <ToastContainer />
-    </>
+      <h1>Testing React Render</h1>
+    </div>
   )
 }
 

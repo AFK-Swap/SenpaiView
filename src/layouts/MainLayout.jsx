@@ -7,12 +7,14 @@ import ChatBot from '../components/ChatBot'
 
 const MainLayout = () => {
     return (
-        <>
+        <div className="min-h-screen bg-gray-900">
             <Navbar />
-            <Outlet />
+            <main className="pt-16">
+                <Outlet />
+            </main>
             <ChatBot />
             {/* <ToastContainer /> */}
-        </>
+        </div>
     )
 }
 

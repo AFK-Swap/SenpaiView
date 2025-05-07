@@ -73,7 +73,7 @@ const Navbar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <nav className="fixed w-full text-white px-4 sm:px-8 py-2 flex items-center justify-between z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 text-white px-4 sm:px-8 py-4 flex items-center justify-between z-50 bg-gray-900/90 backdrop-blur-sm border-b border-white/10">
       {/* Left avatar with dropdown */}
       <div className="dropdown-container relative">
         {user ? (
