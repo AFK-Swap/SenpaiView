@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { User, Mail, Shield, Clock, Star, List, Plus } from 'lucide-react';
 import { toast } from 'react-toastify';
-// Import directly from components folder
-import WatchList from '../components/WatchList';
+import Watchlist from '../components/Watchlist';
 import WatchHistory from '../components/WatchHistory';
 
 const ProfilePage = () => {
@@ -181,7 +180,7 @@ const ProfilePage = () => {
 
         {/* Watchlist Section */}
         <div className="mb-8">
-          <WatchList />
+          <Watchlist />
         </div>
 
         {/* Watch History */}

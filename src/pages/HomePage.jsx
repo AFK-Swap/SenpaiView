@@ -42,21 +42,86 @@ const HomePage = () => {
   const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex flex-col items-center justify-center text-white p-8">
-      <h1 className="text-6xl font-bold mb-8 animate-bounce">SenpaiView</h1>
-      <div className="bg-white/10 backdrop-blur-lg rounded-lg p-8 w-full max-w-2xl">
-        <h2 className="text-3xl font-semibold mb-4">{current.title}</h2>
-        <p className="text-xl text-gray-200 mb-6">{current.subtitle}</p>
-        <div className="flex gap-4 justify-center">
-          <button onClick={prevSlide} className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg transition-all">
-            <ChevronLeft size={24} />
+    <>
+      <div className="relative min-h-screen text-white flex items-center">
+        {/* Video or Image Background */}
+        {current.video ? (
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={current.video} type="video/mp4" />
+          </video>
+        ) : (
+          <div
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${current.bg})`,
+            }}
+          />
+        )}
+
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50" />
+
+        {/* Content */}
+        <div className="relative z-10 px-4 sm:px-8 md:px-12 lg:px-48 max-w-6xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3">{current.title}</h1>
+          <h2 className="text-base sm:text-lg md:text-xl font-light text-gray-300 mb-4">{current.subtitle}</h2>
+
+          {/* Tags */}
+          <div className="flex gap-2 mb-4 flex-wrap">
+            {current.tags.map((tag, i) => (
+              <span
+                key={i}
+                className={`text-xs px-2 py-1 rounded-md ${i % 2 === 0 ? 'bg-red-600' : 'bg-green-600'}`}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Info */}
+          <div className="flex flex-wrap gap-4 mb-6">
+            <div className="bg-black bg-opacity-80 px-3 py-2 rounded-md text-center">
+              <p className="text-xs sm:text-sm text-gray-400">Rating</p>
+              <p className="text-base sm:text-lg font-semibold">{current.rating}</p>
+            </div>
+            <div className="bg-black bg-opacity-80 px-3 py-2 rounded-md text-center">
+              <p className="text-xs sm:text-sm text-gray-400">Release</p>
+              <p className="text-base sm:text-lg font-semibold">{current.release}</p>
+            </div>
+            <div className="bg-black bg-opacity-80 px-3 py-2 rounded-md text-center">
+              <p className="text-xs sm:text-sm text-gray-400">Quality</p>
+              <p className="text-base sm:text-lg font-semibold">{current.quality}</p>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
+            <button className="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-6 py-2 rounded-md transition">
+              WATCH NOW
+            </button>
+            <button className="w-full sm:w-auto p-2 bg-black bg-opacity-50 rounded-md border border-white/20">
+              <Bookmark className="text-white" size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Arrows */}
+        <div className="absolute right-4 bottom-8 z-20 flex items-center gap-2 sm:right-10">
+          <button onClick={prevSlide} className="p-2 bg-black bg-opacity-70 rounded-full hover:bg-opacity-90">
+            <ChevronLeft size={20} />
           </button>
-          <button onClick={nextSlide} className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg transition-all">
-            <ChevronRight size={24} />
+          <button onClick={nextSlide} className="p-2 bg-black bg-opacity-70 rounded-full hover:bg-opacity-90">
+            <ChevronRight size={20} />
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
