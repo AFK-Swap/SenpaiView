@@ -180,7 +180,7 @@ const ProfilePage = () => {
 
         {/* Watchlist Section */}
         <div className="mb-8">
-          <Watchlist />
+          <WatchList />
         </div>
 
         {/* Watch History */}
