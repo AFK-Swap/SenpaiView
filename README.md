@@ -3,9 +3,6 @@
 
 A modern, full-stack anime streaming platform built with the MERN stack, featuring AI-powered recommendations and comprehensive content management.
 
-## 🚀 **Live Demo**
-*Add your live demo link here*
-
 ## 📋 **Table of Contents**
 - [Features](#features)
 - [Technology Stack](#technology-stack)
@@ -208,17 +205,6 @@ SenpaiView/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📝 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 **Author**
-
-**Fahmidur Iqbal Swapnil**
-- GitHub: [@AFK-Swap](https://github.com/AFK-Swap)
-- Email: fahmidur.i.swapnil@gmail.com
-- University: BRAC University
 
 ## 🙏 **Acknowledgments**
 
